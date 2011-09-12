@@ -1,5 +1,5 @@
 require 'spec_helper'
-require File.expand_path("../../gem_fetcher", __FILE__)
+require File.expand_path("../../lib/gem_fetcher", __FILE__)
 
 describe GemFetcher do
   describe "version_list" do
@@ -33,9 +33,18 @@ describe GemFetcher do
         File.read("test_gems/cucumber-1.0.4.gem").length.should == File.read("org_gems/cucumber-1.0.4.gem").length
       end
 
+      context 'errorwhile download gem' do
+        it "should delete the broken file" do
+          Curl::Easy.should_receive(:new).and_raise 'error'
+          GemFetcher.download_gem('cucumber', '1.0.4', 'test_gems').should be_false
+          File.exists?('test_gems/cucumber-1.0.4.gem').should be_false
+        end
+      end
+
       after(:each) do
         `rm test_gems/cucumber-1.0.4.gem`
       end
     end
+
   end
 end
