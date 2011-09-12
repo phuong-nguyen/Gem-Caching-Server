@@ -3,6 +3,8 @@ require 'lib/gem_fetcher'
 
 gems = File.read('gem_list').split("\n").map(&:strip)
 gems.each do |gem|
-  puts "Updating #{gem}"
-  GemFetcher.update(gem)
+  unless gem == ""
+    puts "Updating #{gem}"
+    GemFetcher.update(gem)
+  end
 end
