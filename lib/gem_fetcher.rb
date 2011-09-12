@@ -5,7 +5,7 @@ require 'ruby-debug'
 
 class GemFetcher
   REMOTE_SERVER = "rubygems.org"
-  GEM_HISTORY_LENGTH = 5
+  GEM_HISTORY_LENGTH = 10
   class << self
     def version_list(gem)
       resp = Curl::Easy.perform("http://#{REMOTE_SERVER}/gems/#{gem}/versions")

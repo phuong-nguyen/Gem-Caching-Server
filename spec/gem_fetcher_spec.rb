@@ -3,9 +3,9 @@ require File.expand_path("../../lib/gem_fetcher", __FILE__)
 
 describe GemFetcher do
   describe "version_list" do
-    it "should return last 5 gems" do
+    it "should return last 10 gems" do
       list = GemFetcher.version_list("cucumber")
-      list.size.should == 5
+      list.size.should == 10
       list.should include("1.0.4")
       list.should include("1.0.3")
     end
