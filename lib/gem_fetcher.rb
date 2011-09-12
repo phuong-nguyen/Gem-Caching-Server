@@ -2,6 +2,7 @@ require 'rubygems'
 require 'nokogiri'
 require 'curb'
 require 'ruby-debug'
+
 class GemFetcher
   REMOTE_SERVER = "rubygems.org"
   GEM_HISTORY_LENGTH = 5
@@ -27,7 +28,8 @@ class GemFetcher
             f.write curl.body_str
           end
           true
-        rescue
+        rescue Exception => e
+          p e
           File.delete(path)
           false
         end
@@ -41,7 +43,8 @@ class GemFetcher
         puts "==Updating #{version}"
         download_gem(gem, version)
       end
-    rescue
+    rescue Exception => e
+      p e
       puts "Failed to update #{gem}"
     end
   end
