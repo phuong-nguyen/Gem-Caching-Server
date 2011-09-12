@@ -10,7 +10,7 @@ class GemFetcher
     def version_list(gem)
       resp = Curl::Easy.perform("http://#{REMOTE_SERVER}/gems/#{gem}/versions")
       doc = Nokogiri::HTML(resp.body_str)
-      doc.css('.info .versions a')[0..GEM_HISTORY_LENGTH-1].map do |link|
+      doc.css('.info .versions a').map do |link|
         link.content
       end
     end

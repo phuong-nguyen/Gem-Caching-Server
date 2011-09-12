@@ -1,0 +1,9 @@
+These script help fetching gems file from rubygems and put it inside a local server so that gem installation can be fast
+There are few important script:
+
+1. init.sh
+Run this script the first time you setup the server. This script will fetch all 10 latest version of gems declared inside gem_list
+It then schedule a cron job to run the update process every 4.hours
+
+2. update.sh
+A script to be run every 4.hours
