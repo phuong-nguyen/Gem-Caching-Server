@@ -4,7 +4,6 @@ require 'curb'
 
 resp = Curl::Easy.perform("https://raw.github.com/phuong-nguyen/Gem-Caching-Server/master/gem_list")
 gems = resp.body_str.split("\n").map(&:strip)
-debugger
 gems.reverse.each do |gem|
   unless gem == ""
     puts "Updating #{gem}"
