@@ -1,3 +1,3 @@
 cd `dirname $0`
-./resynce
-gem update_index --update
+./resync.rb
+gem generate_index --update
