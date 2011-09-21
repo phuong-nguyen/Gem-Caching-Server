@@ -49,6 +49,7 @@ heroku
 hike
 hpricot
 i18n
+machinist
 jquery-rails
 json
 json_pure
