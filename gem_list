@@ -1,5 +1,4 @@
 abstract
-abstract
 actionmailer
 actionpack
 activemodel
@@ -57,11 +56,14 @@ pg
 pickle
 polyglot
 rack
+rack-cache
 rack-mount
+rack-ssl
 rack-test
 rails
 railties
 rake
+rdoc
 rest-client
 rspec
 rspec-core
@@ -79,6 +81,7 @@ settingslogic
 sexp_processor
 shoulda
 spork
+sprockets
 squeel
 term-ansicolor
 thor
