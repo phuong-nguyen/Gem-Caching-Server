@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: http://192.168.25.249/
   specs:
     columnize (0.3.4)
     curb (0.7.15)
