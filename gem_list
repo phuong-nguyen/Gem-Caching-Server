@@ -112,3 +112,4 @@ xpath
 acts-as-taggable-on
 base62
 shoulda-matchers
+shoulda-context
